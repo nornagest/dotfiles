@@ -76,3 +76,6 @@ Plugin 'terryma/vim-multiple-cursors'
 " needed by others
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-shell'
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/context_filetype.vim'
+
