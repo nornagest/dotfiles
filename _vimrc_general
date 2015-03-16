@@ -1,0 +1,69 @@
+" general settings
+
+filetype plugin indent on     " required!
+
+syntax on
+set fileencodings=utf-8
+set fileencoding=utf-8
+set encoding=utf-8
+set tenc=utf-8
+set t_Co=256
+set hidden " hide buffers, not close
+set pastetoggle=<F2>
+
+set path=.,,**
+set backup
+set writebackup
+set backupdir=~/.vim/backup
+set undofile
+set undodir=~/.vim/undo
+set directory=~/.vim/tmp
+set wildmode=longest,list		"complete filenames
+set backspace=indent,eol,start		"make Backspace work
+set wildmenu                   " enable enhanced command line completion
+set history=500		" keep 50 lines of command line history
+set undolevels=500
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set showmode  " so you know what mode you are in
+set laststatus=2               " always put a status line in.
+set scrolloff=3                " start scrolling 10 lines from the top/bottom
+set ch=2                       " set command line 2 lines high
+set shiftwidth=4               " round indent actions to multiple of 2
+set softtabstop=4              " soft tabs = 2 spaces 
+set tabstop=4                  " tabs = 2 spaces
+set expandtab                  " expand tabs to spaces
+set incsearch                  " do incremental searching
+set ignorecase                 " case insensitive search
+set smartcase				"only ignore case if pattern is lower case
+set gdefault                   " replace all instances on line when doing global search/replace
+set number                     " enable line numbers
+set relativenumber
+set showmatch                  " show matching parenthesis
+"set whichwrap+=<,>,[,]         " allow arrow keys to line wrap
+"set wildignore+=*.pui,*.prj    " ignore these when completing file or directory names
+set ttyfast                    " faster terminal updates
+set virtualedit+=block         " allow virtual-block select to go past end of lines
+set autoindent
+set smartindent
+set cindent
+set copyindent
+
+"set list listchars=tab:▸\ ,eol:¬,trail:·
+set noeol
+set shiftround
+set smarttab
+
+" Window settings
+set wrap
+set lbr
+set cursorline
+set title
+"set visualbell
+"set noerrorbells
+
+" set folding
+set foldmethod=syntax
+set foldnestmax=2
+set foldlevel=1
+

@@ -1,0 +1,25 @@
+" configuration regarding session management
+
+" Remember things between sessions
+"
+" '20  - remember marks for 20 previous files
+" "50 - save 50 lines for each register
+" :20  - remember 20 items in command-line history
+" %    - remember the buffer list (if vim started without a file arg)
+" n    - set name of viminfo file
+"set viminfo='100,"50,:50,%,n~/.viminfo
+
+"SessionMan
+"set viminfo='100,<500,s10,h,!	
+"viminfo='100,<50,s10,h,rA:,rB:		"old value
+"let sessionman_save_on_exit=1
+"autocmd VimEnter * SessionOpenLast	"Open last Session on startup
+"map <Leader>l :SessionOpenLast<CR>	"Open last Session with \l
+
+"SuperTab configuration
+"let g:SuperTabDefaultCompletionType="context"
+"let g:SuperTabContextDefaultCompletionType=
+
+"let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+"let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+"let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]

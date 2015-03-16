@@ -1,0 +1,115 @@
+" plugin specific configuration
+
+" test easytags performance
+set regexpengine=0
+
+let g:easytags_file = '~/.vim/_tags'
+let g:easytags_by_filetype='~/.vim/tags'
+let g:easytags_ctags_version='5.8'
+let g:easytags_syntax_keyword = 'always'
+let g:easytags_cmd = '/usr/local/bin/exctags'
+
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 50
+
+"set complete+=k~/.vim/_vimcomplete
+"set iskeyword+=:
+
+"set tags+=~/.vim/tags/perltags
+"let g:easytags_languages = { 'perl': { 'cmd': 'pltags.pl'} }
+"let g:easytags_languages = { 'perl': { 'cmd': 'perl-tags', 'args': [ '-o ~/.vim/tags/perltags'] } }
+"let g:easytags_languages = { 'perl': { 'cmd': 'ptags', 'args': [], 'fileoutput_opt': '-o ', 'stdout_opt': '', 'recurse_flag': ''} }
+"let g:Perl_PerlTags='Perl::Tags'
+
+let g:easytags_languages = {
+\   'perl': {
+\     'cmd': 'perl-tags',
+\       'args': ['-o ~/.vim/tags/perl'],
+\       'fileoutput_opt': '-o',
+\       'stdout_opt': '',
+\       'recurse_flag': ''
+\   }
+\}
+
+let perl_include_pod   = 1    "include pod.vim syntax file with perl.vim"
+let perl_extended_vars = 1    "highlight complex expressions such as @{[$x, $y]}"
+let perl_sync_dist     = 250  "use more context for highlighting"
+
+let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
+let g:Tex_DefaultTargetFormat='pdf'
+let tex_flavor = "latex" 
+
+" Tabman
+let g:tabman_specials = 0
+
+" Fancy Powerlines
+"let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
+
+" let airline use powerline fancy fonts
+let g:airline_powerline_fonts=1
+let g:airline_theme='dark'
+
+" fix powerline lag: https://powerline.readthedocs.org/en/latest/tipstricks.html
+if ! has('gui_running')
+	set ttimeoutlen=10
+	augroup FastEscape
+		autocmd!
+		au InsertEnter * set timeoutlen=0
+		au InsertLeave * set timeoutlen=1000
+	augroup END
+endif
+
+" Supertabs
+" Auto NERDTree on startup
+"autocmd vimenter * NERDTree
+
+" Tabman
+let g:tabman_width = 25
+let g:tabman_side = 'left'
+
+" Gitgutter
+let g:gitgutter_eager = 0
+
+" Filetypes
+"au BufRead,BufNewFile /etc/nginx/*	set		ft=nginx
+"au BufRead,BufNewFile /usr/local/nginx/conf/*	set		ft=nginx
+
+" {{{ Filetypes
+"
+" make uses real tabs
+au FileType make setl noexpandtab
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+
+" Map .twig files as jinja templates
+au BufRead,BufNewFile *.{twig}  set ft=htmljinja
+
+" Map *.coffee to coffee type
+au BufRead,BufNewFile *.coffee  set ft=coffee
+
+" Highlight JSON like Javascript
+au BufNewFile,BufRead *.json set ft=javascript
+
+" Make eruby filetype also html
+au BufNewFile,BufRead *.erb set ft=eruby.html
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab
+au FileType rst setl textwidth=80
+
+" Make ruby use 2 spaces for indentation.
+au FileType ruby setl softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+au FileType eruby setl softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
+" PHP settings
+au FileType php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 noexpandtab
+
+" Javascript settings
+au FileType javascript setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 noexpandtab
+
+" Coffeescript uses 2 spaces too.
+au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab
+
+" }}}

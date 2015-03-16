@@ -1,0 +1,31 @@
+" key mappings
+
+noremap <silent> <leader><space> :noh<CR>
+noremap <silent> <Leader>n :NERDTreeToggle<CR>
+noremap <silent> <Leader>t :TlistToggle<CR>
+"noremap <silent> <Leader>t :TagbarToggle<CR>
+
+" show hidden characters
+noremap <F3> :set invlist<CR>
+
+" Don't use Ex mode, use Q for formatting
+noremap Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+"Switch between showing all buffers in tabs and close all tabs
+"let notabs = 1
+"nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
+
+"UltiSnips remap Tab to allow usual tabbing when editing
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsListSnippets="<s-c-tab>"
+
+let g:ctrlp_map = '<c-p>'
+
+let g:tabman_toggle = '<leader>mt'
+let g:tabman_focus = '<leader>mf'
+
+"let g:SuperTabDefaultCompletionType = "\<c-x>\<c-o>"

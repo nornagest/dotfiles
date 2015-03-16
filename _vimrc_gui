@@ -1,0 +1,7 @@
+" GVim related config
+
+"remove menu bar in GVim
+"set guioptions-=m  			
+set guioptions-=T  			"remove toolbar
+set guioptions-=r  			"remove right-hand scroll bar
+set guifont=Anonymous\ Pro\ for\ Powerline\ 10
